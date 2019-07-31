@@ -1,6 +1,6 @@
 # Infrastructure as Code with Puppet
 
-This is based on [this step-by-step guide](https://github.com/ardydedase/devops/blob/master/puppet/README.md).
+Direct link to [this step-by-step guide](https://github.com/ardydedase/devops/blob/master/puppet/README.md).
 
 This exercise is meant to help you understand how Infrastructure as code works using Puppet.
 
@@ -145,7 +145,7 @@ This is the basis of the r10k control repo that we will use here: https://github
     touch /etc/puppetlabs/r10k/r10k.yaml
     nano -b /etc/puppetlabs/r10k/r10k.yaml
     ```
-    Paste the following cofiguration to the `r10k.yaml` file. 
+    Paste the following configuration to the `r10k.yaml` file. 
     Replacing the `$YOUR_GITHUB_USERNAME$` with your own GitHub username.
 
     ```
