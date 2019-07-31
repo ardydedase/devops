@@ -155,11 +155,11 @@ This is the basis of the r10k control repo that we will use here: https://github
 
     # Repos. clones git repo
     :sources:
-    # branch => environment  mapping in /etc/puppetlabs/code/environments
-    # replace username with your github username
-    :my-org:
+      # branch => environment  mapping in /etc/puppetlabs/code/environments
+      # replace username with your github username
+      :my-org:
         remote: 'https://github.com/$YOUR_GITHUB_USERNAME$/control-repo.git'
-        basedir: '/etc/puppetlabs/code/environments'    
+        basedir: '/etc/puppetlabs/code/environments'
     ```
 
 1. Update the remote git repository to point to the git repository that you have created above e.g. You can try to edit the `README.md` file for now to test if it works with our setup.
