@@ -7,7 +7,7 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
 ## Pre-requisites
 - Github Account
 - AWS Account
-- AWS EC2 Key Pair. [Follow this tutorial](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) and take note of your Key Pair.
+- AWS EC2 Key Pair. [Follow this tutorial](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) and take note of your Key Pair. *There is no need for us to ssh into a machine here so we can skip the `chmod` step in the guide.*
 
 ## Step by step guide - basic CodeStar setup
 
