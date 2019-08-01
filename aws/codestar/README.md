@@ -31,6 +31,8 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
 
 1. After reviewing the project details, click "Create Project". This will automatically create the GitHub repository for you. You can visit GitHub afterwards to see your repository.
 
+1. Choose the keypair that you have created in the Pre-Requisites as you Key Pair.
+
 1. Click "Next" button, you will be redirected to the Project setup page. Try to refresh the page to see if the project setup has finished.
 
     ![Project loading](screens/setup-loading.png "Project loading")
