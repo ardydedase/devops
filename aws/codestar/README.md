@@ -39,4 +39,4 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
 
 1. Click the Application Endpoint when it is ready and you should be able to see the JSON response of your Flask API.
 
-1. Try to make some changes to your GithHub repository push it to GitHub. Observe the deployment pipeline and refresh your Application Endpoint.
+1. Update your `helloworld/application.py` file to change your application's output using GitHub's web interface. Observe the deployment pipeline and refresh your Application Endpoint.
