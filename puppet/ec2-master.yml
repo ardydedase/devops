@@ -9,11 +9,20 @@ Resources:
     Type: AWS::EC2::Instance
     Metadata: 
       AWS::CloudFormation::Init:
-        config:
+        configSets:
+          InstallAndRun:
+          - Configure        
+        Configure:
           commands:
-            test:
+            01-test:
               command: !Sub |
                 echo "hello init" > /tmp/hello.txt
+            02-configure:
+              command: !Sub |
+                sudo rpm -Uvh https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
+            03-install:
+              command: !Sub |
+                yum install -y puppetserver nano git
     Properties:
       SecurityGroups:
       - !Ref InstanceSecurityGroup    
@@ -24,6 +33,14 @@ Resources:
       ImageId: ami-01f7527546b557442
       InstanceType: t2.micro
       KeyName: !Ref 'KeyName'
+      UserData:
+        "Fn::Base64":
+          !Sub |
+             #!/bin/bash
+             sudo yum install -y aws-cfn-bootstrap
+             sudo /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} \
+             --resource PuppetMasterEC2 --configsets InstallAndRun \
+             --region ${AWS::Region}      
   InstanceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:

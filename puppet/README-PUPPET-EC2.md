@@ -13,6 +13,7 @@ Infrastructure as code in practice using AWS CloudFormation and Puppet.
 
 - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-init.html
 - Troubleshooting cf-init: https://www.reddit.com/r/aws/comments/6a9uk6/cloudformation_having_trouble_with/
+- Setting up Putty: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html
 
 ## Notes
 
