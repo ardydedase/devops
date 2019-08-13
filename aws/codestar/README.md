@@ -7,7 +7,7 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
 ## Pre-requisites
 - Github Account
 - AWS Account
-- AWS EC2 Key Pair. [Follow this tutorial](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) and take note of your Key Pair.
+- AWS EC2 Key Pair. [Follow this tutorial](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) and take note of your Key Pair. *There is no need for us to ssh into a machine here so we can skip the `chmod` step in the guide.*
 
 ## Step by step guide - basic CodeStar setup
 
@@ -31,6 +31,8 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
 
 1. After reviewing the project details, click "Create Project". This will automatically create the GitHub repository for you. You can visit GitHub afterwards to see your repository.
 
+1. Choose the keypair that you have created in the Pre-Requisites as you Key Pair.
+
 1. Click "Next" button, you will be redirected to the Project setup page. Try to refresh the page to see if the project setup has finished.
 
     ![Project loading](screens/setup-loading.png "Project loading")
@@ -39,4 +41,8 @@ All of AWS services in this tutorial should be in the same region Singapore (ap-
 
 1. Click the Application Endpoint when it is ready and you should be able to see the JSON response of your Flask API.
 
-1. Update your `helloworld/application.py` file to change your application's output using GitHub's web interface. Observe the deployment pipeline and refresh your Application Endpoint.
+1. Update your `helloworld/application.py` file to change your application's output using GitHub's web interface. Observe the deployment pipeline and refresh your Application Endpoint. You can change the following line under the `get()` method:
+
+    ```
+    return Response(json.dumps({'Output': 'Hello World from Codestar'}), mimetype='application/json', status=200)
+    ```
