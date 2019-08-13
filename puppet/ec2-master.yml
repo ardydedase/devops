@@ -1,0 +1,35 @@
+Parameters:
+  KeyName:
+    Description: Name of an existing keypair you have created.
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    ConstraintDescription: must be the name of an existing EC2 KeyPair.
+
+Resources:
+  PuppetMasterEC2:
+    Type: AWS::EC2::Instance
+    Metadata: 
+      AWS::CloudFormation::Init:
+        config:
+          commands:
+            test:
+              command: !Sub |
+                echo "hello init" > /tmp/hello.txt
+    Properties:
+      SecurityGroups:
+      - !Ref InstanceSecurityGroup    
+      Tags:
+        - 
+          Key: "Name"
+          Value: "PuppetMaster"
+      ImageId: ami-01f7527546b557442
+      InstanceType: t2.micro
+      KeyName: !Ref 'KeyName'
+  InstanceSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+        GroupDescription: Base Security Group
+        SecurityGroupIngress:
+          - IpProtocol: tcp
+            CidrIp: 0.0.0.0/0
+            FromPort: 22
+            ToPort: 22              
